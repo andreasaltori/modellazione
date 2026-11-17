@@ -1,0 +1,210 @@
+{
+  "id": "villa-moretti",
+  "title": "Il Caso di Villa Moretti",
+  "intro": "Durante la festa d'autunno a Villa Moretti, il conte Ettore Moretti è stato trovato morto nel suo studio. Per il medico sembra un infarto, ma il commissario ha dubbi e ti affida le indagini informali: hai a disposizione una serata. Esamina i luoghi, interroga i presenti, raccogli indizi e poi accusa il colpevole, presentando le prove.",
+  "timeLimit": 18,
+  "startLocation": "atrio",
+  "culprit": "ferri",
+  "requiredEvidence": 3,
+  "keyClues": ["bicchiere", "digossina", "registro", "testimonianza", "contraddizione"],
+  "solution": "Il dottor Bruno Ferri sottraeva da anni denaro al conte alterando il registro contabile. Scoperto, ha avvelenato il cognac del conte con la digossina del suo studio medico, sperando che la morte passasse per un infarto. Ha mentito sull'ora del suo arrivo, ma la governante lo ha visto uscire dallo studio alle 22:40.",
+  "locations": [
+    {
+      "id": "atrio",
+      "name": "Atrio",
+      "description": "Un ampio ingresso con pavimento a scacchi. Gli ospiti sussurrano accanto allo scalone.",
+      "exits": ["studio", "salotto", "giardino"]
+    },
+    {
+      "id": "studio",
+      "name": "Studio del conte",
+      "description": "Una stanza buia di libri e mobili in noce. La poltrona del conte è ancora rovesciata.",
+      "exits": ["atrio"]
+    },
+    {
+      "id": "salotto",
+      "name": "Salotto",
+      "description": "Divani di velluto e un camino acceso. Alcuni ospiti hanno lasciato borse e cappotti.",
+      "exits": ["atrio", "cucina"]
+    },
+    {
+      "id": "cucina",
+      "name": "Cucina",
+      "description": "Odore di brodo e pentole ancora calde. Il personale è silenzioso e nervoso.",
+      "exits": ["salotto", "giardino"]
+    },
+    {
+      "id": "giardino",
+      "name": "Giardino",
+      "description": "Aiuole curate e una fontana spenta. La notte è umida e il terreno è fangoso.",
+      "exits": ["atrio", "cucina"]
+    }
+  ],
+  "clues": [
+    {
+      "id": "bicchiere",
+      "title": "Bicchiere con residuo amaro",
+      "description": "Sul fondo del bicchiere di cognac del conte c'è una patina dall'odore amarognolo: qualcuno ha aggiunto una sostanza alla bevanda.",
+      "hint": "un bicchiere di cognac sulla scrivania",
+      "location": "studio",
+      "skill": "perception",
+      "difficulty": 10
+    },
+    {
+      "id": "registro",
+      "title": "Registro contabile alterato",
+      "description": "Le cifre del registro non tornano: ogni mese una somma identica esce verso un conto intestato a una sola lettera, la «F».",
+      "hint": "il registro contabile nel cassetto",
+      "location": "studio",
+      "skill": "logic",
+      "difficulty": 12
+    },
+    {
+      "id": "digossina",
+      "title": "Flacone di digossina",
+      "description": "Nella borsa del dottor Ferri c'è un flacone quasi vuoto di digossina, un farmaco che in dose eccessiva è letale per il cuore.",
+      "hint": "una borsa da medico dimenticata sul divano",
+      "location": "salotto",
+      "skill": "perception",
+      "difficulty": 12
+    },
+    {
+      "id": "biglietto",
+      "title": "Biglietto strappato",
+      "description": "Un biglietto della governante: «Giulia vuole vendere la villa, il conte non lo permetterà mai». Sembra una pista, ma non dice nulla sulla morte.",
+      "hint": "i frammenti di un biglietto nel cestino",
+      "location": "cucina",
+      "skill": "perception",
+      "difficulty": 9
+    },
+    {
+      "id": "impronte",
+      "title": "Mozziconi nel fango",
+      "description": "Qualcuno ha fumato a lungo vicino alla fontana, in disparte. I mozziconi sono della marca di Marco Venturi.",
+      "hint": "impronte di scarpe vicino alla fontana",
+      "location": "giardino",
+      "skill": "perception",
+      "difficulty": 8
+    },
+    {
+      "id": "testamento",
+      "title": "Il nuovo testamento",
+      "description": "Il conte voleva cambiare il testamento e lasciare tutto alla fondazione di beneficenza: Giulia ci avrebbe perso.",
+      "skill": "empathy"
+    },
+    {
+      "id": "debiti",
+      "title": "I debiti di Venturi",
+      "description": "Marco Venturi ha grossi debiti di gioco e sperava in un prestito dal conte. Il conte aveva rifiutato.",
+      "skill": "empathy"
+    },
+    {
+      "id": "testimonianza",
+      "title": "Testimonianza della governante",
+      "description": "Elena Rossi ha visto il dottor Ferri uscire dallo studio alle 22:40, con aria agitata, chiudendo piano la porta.",
+      "skill": "empathy"
+    },
+    {
+      "id": "contraddizione",
+      "title": "La bugia del dottore",
+      "description": "Messo di fronte alla testimonianza della governante, il dottor Ferri si contraddice: aveva detto di essere arrivato alle 23:00.",
+      "skill": "logic"
+    }
+  ],
+  "people": [
+    {
+      "id": "ferri",
+      "name": "Dott. Bruno Ferri",
+      "description": "Il medico di famiglia, cordiale e impeccabile.",
+      "location": "atrio",
+      "topics": [
+        {
+          "id": "ferri-orario",
+          "question": "A che ora è arrivato questa sera?",
+          "answer": "Sono arrivato alle undici in punto, ho trovato il conte già senza vita.",
+          "skill": "logic",
+          "difficulty": 8
+        },
+        {
+          "id": "ferri-conte",
+          "question": "Com'era la salute del conte?",
+          "answer": "Cuore debole da anni. Non mi stupisce che sia stato un infarto.",
+          "skill": "empathy",
+          "difficulty": 10
+        },
+        {
+          "id": "ferri-bugia",
+          "question": "Le contesto la testimonianza della governante",
+          "answer": "Io... forse mi sono confuso con gli orari. Ero là a prendere un documento, niente di più.",
+          "skill": "logic",
+          "difficulty": 12,
+          "grants": "contraddizione",
+          "requires": "testimonianza"
+        }
+      ]
+    },
+    {
+      "id": "giulia",
+      "name": "Giulia Moretti",
+      "description": "La nipote del conte, elegante e tesa.",
+      "location": "salotto",
+      "topics": [
+        {
+          "id": "giulia-zio",
+          "question": "Che rapporto aveva con suo zio?",
+          "answer": "Litigavamo per la villa, ma gli volevo bene. Non l'avrei mai toccato.",
+          "skill": "empathy",
+          "difficulty": 8
+        },
+        {
+          "id": "giulia-testamento",
+          "question": "Sapeva qualcosa del testamento?",
+          "answer": "Zio voleva lasciare tutto alla fondazione. Ne avevamo discusso proprio ieri.",
+          "skill": "empathy",
+          "difficulty": 10,
+          "grants": "testamento"
+        }
+      ]
+    },
+    {
+      "id": "elena",
+      "name": "Elena Rossi",
+      "description": "La governante, in servizio dalla giovinezza del conte.",
+      "location": "cucina",
+      "topics": [
+        {
+          "id": "elena-sera",
+          "question": "Cosa ha visto questa sera vicino allo studio?",
+          "answer": "Ho visto il dottore uscire dallo studio verso le dieci e quaranta. Pensavo fosse appena arrivato...",
+          "skill": "empathy",
+          "difficulty": 11,
+          "grants": "testimonianza"
+        },
+        {
+          "id": "elena-biglietto",
+          "question": "Questo biglietto strappato è suo?",
+          "answer": "Sì, l'ho scritto io sfogandomi. Giulia è una brava ragazza, non farebbe del male a nessuno.",
+          "skill": "empathy",
+          "difficulty": 9,
+          "requires": "biglietto"
+        }
+      ]
+    },
+    {
+      "id": "venturi",
+      "name": "Marco Venturi",
+      "description": "Il socio in affari del conte, nervoso e sudato.",
+      "location": "giardino",
+      "topics": [
+        {
+          "id": "venturi-fuori",
+          "question": "Perché si trova qui fuori?",
+          "answer": "Avevo chiesto un prestito al conte. Mi ha detto di no, e sono uscito a fumare.",
+          "skill": "empathy",
+          "difficulty": 9,
+          "grants": "debiti"
+        }
+      ]
+    }
+  ]
+}
