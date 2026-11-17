@@ -1,10 +1,10 @@
 # Il Caso di Villa Moretti – Wiki del progetto
 
 Progetto d'esame di Metodologie di Programmazione / Modellazione e Gestione della Conoscenza
-(UNICAM, AA 2025/26) – matricola 122627 – package `it.unicam.cs.mpgc.rpg122627`.
+(UNICAM, AA 2025/26) – matricola 122542 – package `it.unicam.cs.mpgc.rpg122627`.
 
 Un gioco di ruolo investigativo in Java con interfaccia Swing. Il giocatore indaga sulla morte del
-conte Moretti, raccoglie indizi superando prove di abilità e deve accusare il colpevole con prove
+conte Moretti, raccoglie indizi e deve accusare il colpevole con prove
 sufficienti prima che finisca il tempo.
 
 ## Indice
