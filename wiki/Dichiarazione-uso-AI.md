@@ -2,7 +2,7 @@
 
 In conformità alle linee guida del corso, si dichiara che durante la realizzazione del progetto sono stati impiegati strumenti di Intelligenza Artificiale generativa (LLM) esclusivamente con **ruolo di supporto e affiancamento allo sviluppo**.
 
-L'ideazione del dominio applicativo, l'analisi dei requisiti, la progettazione dell'architettura software, la suddivisione delle responsabilità tra i package e la validazione finale del codice sono state svolte e supervisionate interamente dall'autore del progetto. Nessun output generato automaticamente è stato integrato senza prima essere analizzato, compreso, adattato al contesto del progetto e verificato tramite compilazione ed esecuzione dei test.
+L'ideazione del dominio applicativo, l'analisi dei requisiti, la progettazione dell'architettura software, la suddivisione delle responsabilità tra i package e la validazione finale del codice sono state svolte e supervisionate interamente insieme all'AI. Nessun output generato automaticamente è stato integrato senza prima essere analizzato, compreso, adattato al contesto del progetto e verificato tramite compilazione ed esecuzione dei test.
 
 ## Ambiti e scopi di utilizzo
 
